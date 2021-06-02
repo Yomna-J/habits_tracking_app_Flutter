@@ -43,6 +43,21 @@ class Home extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(height: size.height * .08),
+          RichText(
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: "Lets Start",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 50,
+                      //fontWeight: FontWeight.w800,
+                      fontFamily: 'OpenSans'),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
