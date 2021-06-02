@@ -67,6 +67,8 @@ flutter:
         - asset: fonts/OpenSans-Regular.ttf
         - asset: fonts/OpenSans-ExtraBold.ttf
           weight: 700
+        - asset: fonts/OpenSans-Light.ttf
+          style: 100
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
