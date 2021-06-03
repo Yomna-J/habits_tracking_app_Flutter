@@ -37,6 +37,16 @@ class DayBox extends StatelessWidget {
                 ]
               : [Colors.white, Colors.white],
         ),
+        boxShadow: active == false
+            ? [
+                BoxShadow(
+                  color: kShadow,
+                  offset: Offset(5, 10),
+                  blurRadius: 10,
+                  spreadRadius: 3,
+                )
+              ]
+            : [],
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

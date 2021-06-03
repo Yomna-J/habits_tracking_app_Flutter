@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:habits_tracking_app/constants.dart';
+import 'package:habits_tracking_app/widgets/activity_card.dart';
 import 'package:habits_tracking_app/widgets/day_box.dart';
 
 class Activities extends StatefulWidget {
@@ -37,7 +39,7 @@ class _ActivitiesState extends State<Activities> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 5),
+        padding: const EdgeInsets.symmetric(vertical: 5),
         child: Column(
           children: <Widget>[
             Container(
@@ -58,6 +60,42 @@ class _ActivitiesState extends State<Activities> {
                         active: current == index),
                   );
                 },
+              ),
+            ),
+            SizedBox(height: size.height * .05),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Row(
+                children: <Widget>[
+                  Text(
+                    'Outdoor',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'OpenSans',
+                      fontSize: 25,
+                    ),
+                  ),
+                  SizedBox(width: 25),
+                  Text(
+                    'Indoor',
+                    style: TextStyle(
+                      color: kGray,
+                      fontFamily: 'OpenSans',
+                      fontSize: 25,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: size.height * .03),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: ActivityCard(
+                title: 'Yoga',
+                image: 'assets/images/image-2.png',
+                color1: kPrimaryPurple,
+                color2: kBlue,
+                btnTxtColor: kDarkPurple,
               ),
             ),
           ],
