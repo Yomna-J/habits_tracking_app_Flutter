@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:habits_tracking_app/constants.dart';
 import 'package:habits_tracking_app/screens/activities_screen.dart';
 
-
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -84,27 +83,27 @@ class Home extends StatelessWidget {
             ),
           ),
           SizedBox(height: size.height * .05),
-          Container(
-            height: size.height * .09,
-            width: size.width * .9,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(45),
-              gradient: LinearGradient(
-                begin: Alignment.bottomRight,
-                end: Alignment.topLeft,
-                colors: [
-                  Color(0xFFF68159),
-                  Color(0xFFF5A05B),
-                ],
+          GestureDetector(
+            onTap: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext contexft) => Activities()));
+            },
+            child: Container(
+              height: size.height * .09,
+              width: size.width * .9,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(45),
+                gradient: LinearGradient(
+                  begin: Alignment.bottomRight,
+                  end: Alignment.topLeft,
+                  colors: [
+                    Color(0xFFF68159),
+                    Color(0xFFF5A05B),
+                  ],
+                ),
               ),
-            ),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (BuildContext context) => Activities()));
-              },
               child: Center(
                 child: Text(
                   'START NOW',

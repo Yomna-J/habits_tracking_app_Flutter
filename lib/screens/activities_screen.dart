@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:habits_tracking_app/constants.dart';
 import 'package:habits_tracking_app/widgets/day_box.dart';
 
-class Activities extends StatelessWidget {
+class Activities extends StatefulWidget {
+  @override
+  _ActivitiesState createState() => _ActivitiesState();
+}
+
+class _ActivitiesState extends State<Activities> {
+  int current = 0;
+  var blocks = {'MON': 5, 'TUE': 6, 'WED': 7, 'THU': 8};
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -33,15 +40,24 @@ class Activities extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 5),
         child: Column(
           children: <Widget>[
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: <Widget>[
-                  DayBox(day: 'MON', date: 5, active: true),
-                  DayBox(day: 'MON', date: 6),
-                  DayBox(day: 'MON', date: 7),
-                  DayBox(day: 'MON', date: 8),
-                ],
+            Container(
+              height: 90,
+              child: ListView.builder(
+                itemCount: blocks.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        current = index;
+                      });
+                    },
+                    child: DayBox(
+                        date: blocks.values.elementAt(index),
+                        day: '${blocks.keys.elementAt(index)}',
+                        active: current == index),
+                  );
+                },
               ),
             ),
           ],
