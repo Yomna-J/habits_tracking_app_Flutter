@@ -1,142 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:habits_tracking_app/constants.dart';
 import 'package:habits_tracking_app/screens/activities_screen.dart';
+import 'package:habits_tracking_app/screens/profile_screen.dart';
+import 'package:habits_tracking_app/screens/settings_screen.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int _currentIndex = 0;
+
+  final List<Widget> _screens = [Activities(), Profile(), Settings()];
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Stack(
-            alignment: Alignment.topCenter,
-            clipBehavior: Clip.none,
-            children: [
-              Positioned(
-                child: ClipPath(
-                  clipper: Clipper(),
-                  child: Container(
-                    height: size.height * .55,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.bottomRight,
-                        end: Alignment.topLeft,
-                        colors: [
-                          kPrimaryOrange,
-                          kLightOrange,
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                top: size.height * .08,
-                child: Image.asset(
-                  'assets/images/image-1.png',
-                  height: size.height * .5,
-                ),
-              ),
-            ],
+      body: _screens[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: (int index) {
+          setState(() {
+            this._currentIndex = index;
+          });
+          //_navigateToScreens(index);
+        },
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+            icon: _currentIndex == 0
+                ? Image.asset('assets/icons/icon-2-colored.png', width: 25)
+                : Image.asset('assets/icons/icon-2.png', width: 25),
+            label: '',
           ),
-          SizedBox(height: size.height * .08),
-          RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 35,
-                fontWeight: FontWeight.w800,
-                fontFamily: 'OpenSans',
-                height: 1.0,
-              ),
-              children: [
-                TextSpan(
-                  text: 'Lets Start\n',
-                ),
-                TextSpan(
-                  text: 'Your Habits',
-                ),
-              ],
-            ),
+          BottomNavigationBarItem(
+            icon: _currentIndex == 1
+                ? Image.asset('assets/icons/icon-3-colored.png', width: 25)
+                : Image.asset('assets/icons/icon-3.png', width: 25),
+            label: '',
           ),
-          SizedBox(height: size.height * .03),
-          RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 15,
-                fontFamily: 'OpenSans',
-                fontWeight: FontWeight.w100,
-              ),
-              children: [
-                TextSpan(
-                  text:
-                      'Lorem ipsum dolor sit amet,\n consectetuer adipiscing elit, sed\n diam nonummy nibh ',
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: size.height * .05),
-          GestureDetector(
-            onTap: () {
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext contexft) => Activities()));
-            },
-            child: Container(
-              height: size.height * .09,
-              width: size.width * .9,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(45),
-                gradient: LinearGradient(
-                  begin: Alignment.bottomRight,
-                  end: Alignment.topLeft,
-                  colors: [
-                    Color(0xFFF68159),
-                    Color(0xFFF5A05B),
-                  ],
-                ),
-              ),
-              child: Center(
-                child: Text(
-                  'START NOW',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'OpenSans',
-                    fontWeight: FontWeight.w800,
-                    fontSize: 25,
-                  ),
-                ),
-              ),
-            ),
+          BottomNavigationBarItem(
+            icon: Image.asset('assets/icons/icon-4.png', width: 25),
+            label: '',
           ),
         ],
       ),
     );
-  }
-}
-
-class Clipper extends CustomClipper<Path> {
-  Path getClip(Size size) {
-    var path = Path();
-    path.lineTo(0, size.height - 80);
-    path.quadraticBezierTo(
-        size.width / 2, size.height + 30, size.width, size.height - 80);
-    path.lineTo(size.width, 0);
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return false;
   }
 }

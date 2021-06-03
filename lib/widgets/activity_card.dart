@@ -6,6 +6,7 @@ class ActivityCard extends StatelessWidget {
   final Color color1;
   final Color color2;
   final Color btnTxtColor;
+  final double rightValue;
 
   const ActivityCard({
     Key? key,
@@ -14,6 +15,7 @@ class ActivityCard extends StatelessWidget {
     required this.color1,
     required this.color2,
     required this.btnTxtColor,
+    this.rightValue = 0,
   }) : super(key: key);
 
   @override
@@ -48,29 +50,32 @@ class ActivityCard extends StatelessWidget {
           ),
           Positioned(
             bottom: 0,
-            child: Container(
-              margin: EdgeInsets.only(bottom: 12),
-              height: 25,
-              width: 80,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(7),
-                color: Colors.white,
-              ),
-              child: Center(
-                  child: Text(
-                'Start Now',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 12,
-                  fontFamily: 'OpenSans',
-                  fontWeight: FontWeight.w800,
-                  color: btnTxtColor,
+            child: GestureDetector(
+              onTap: () {},
+              child: Container(
+                margin: EdgeInsets.only(bottom: 12),
+                height: 25,
+                width: 80,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(7),
+                  color: Colors.white,
                 ),
-              )),
+                child: Center(
+                    child: Text(
+                  'Start Now',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontFamily: 'OpenSans',
+                    fontWeight: FontWeight.w800,
+                    color: btnTxtColor,
+                  ),
+                )),
+              ),
             ),
           ),
           Positioned(
-            right: 0,
+            right: rightValue,
             child: Image.asset(
               image,
               height: 110,
