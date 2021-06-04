@@ -24,7 +24,6 @@ class _HomeState extends State<Home> {
           setState(() {
             this._currentIndex = index;
           });
-          //_navigateToScreens(index);
         },
         type: BottomNavigationBarType.fixed,
         items: [
