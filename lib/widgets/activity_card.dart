@@ -36,7 +36,7 @@ class ActivityCard extends StatelessWidget {
         ),
       ),
       child: Stack(
-        children: [
+        children: <Widget>[
           Positioned(
             child: Text(
               title,

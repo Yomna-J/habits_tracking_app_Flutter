@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:habits_tracking_app/constants.dart';
 import 'package:habits_tracking_app/widgets/custom_switch.dart';
-
-import '../constants.dart';
 
 class HabitReminder extends StatefulWidget {
   final String habit;

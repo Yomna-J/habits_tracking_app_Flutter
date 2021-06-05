@@ -60,15 +60,13 @@ class HabitProgress extends StatelessWidget {
   }
 }
 
+// https://github.com/TechieBlossom/FitnessApp
 class RadialPainter extends CustomPainter {
   double progressInDegrees;
 
   RadialPainter(this.progressInDegrees);
-
   @override
   void paint(Canvas canvas, Size size) {
-    var path = Path();
-
     Paint paint = Paint()
       ..color = Colors.white
       ..strokeCap = StrokeCap.butt

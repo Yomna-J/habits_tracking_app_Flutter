@@ -4,6 +4,7 @@ import 'package:habits_tracking_app/screens/home_screen.dart';
 
 void main() => runApp(MaterialApp(
       home: Start(),
+      debugShowCheckedModeBanner: false,
     ));
 
 class Start extends StatelessWidget {
@@ -74,7 +75,7 @@ class Start extends StatelessWidget {
             text: TextSpan(
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 15,
+                fontSize: 16,
                 fontFamily: 'OpenSans',
                 fontWeight: FontWeight.w100,
               ),
@@ -89,10 +90,8 @@ class Start extends StatelessWidget {
           SizedBox(height: size.height * .05),
           GestureDetector(
             onTap: () {
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => Home()));
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (BuildContext context) => Home()));
             },
             child: Container(
               height: size.height * .09,

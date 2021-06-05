@@ -24,7 +24,6 @@ class DayBox extends StatelessWidget {
       height: height,
       width: width,
       decoration: BoxDecoration(
-        //TODO Add shadow
         borderRadius: BorderRadius.circular(15),
         gradient: LinearGradient(
           begin: Alignment.bottomRight,
@@ -33,7 +32,7 @@ class DayBox extends StatelessWidget {
               ? [
                   kPrimaryOrange,
                   kLightOrange,
-                  KLastOrange,
+                  KOrange,
                 ]
               : [Colors.white, Colors.white],
         ),
@@ -50,7 +49,7 @@ class DayBox extends StatelessWidget {
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
+        children: <Widget>[
           RichText(
             textAlign: TextAlign.center,
             text: TextSpan(

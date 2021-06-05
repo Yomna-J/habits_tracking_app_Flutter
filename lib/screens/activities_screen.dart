@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:habits_tracking_app/constants.dart';
-
 import 'package:habits_tracking_app/widgets/activity_card.dart';
 import 'package:habits_tracking_app/widgets/day_box.dart';
 
@@ -45,7 +44,7 @@ class _ActivitiesState extends State<Activities> {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5),
+          padding: EdgeInsets.symmetric(vertical: 5),
           child: Column(
             children: <Widget>[
               Container(
