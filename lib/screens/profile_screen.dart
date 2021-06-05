@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habits_tracking_app/constants.dart';
-import 'package:habits_tracking_app/widgets/custom_switch.dart';
+import 'package:habits_tracking_app/widgets/habit_progress.dart';
 import 'package:habits_tracking_app/widgets/habit_reminder.dart';
 
 class Profile extends StatefulWidget {
@@ -62,6 +61,15 @@ class _ProfileState extends State<Profile> {
                 fontFamily: 'OpenSans',
                 fontSize: 25,
               ),
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                HabitProgress(habit: 'Work', percentage: 45),
+                HabitProgress(habit: 'Yoga', percentage: 50),
+                HabitProgress(habit: 'Studied', percentage: 30),
+              ],
             ),
           ],
         ),
