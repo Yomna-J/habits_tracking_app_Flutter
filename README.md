@@ -1,16 +1,10 @@
-# habits_tracking_app
+# Habits Tracking App - Flutter
+An app that shows the user's habits and activities, at the home page outdoor and indoor activities are scheduled and presented to the user. The profile page allows the user to set reminders as well as presenting the progress of the user. However, this repository is only a basic and similar implementation of the UI.
 
-A new Flutter project.
+# UI 
+The [app UI](https://www.freepik.com/free-vector/goals-habits-tracking-app_9427328.htm) is a <a href="https://www.freepik.com/vectors/technology">Technology vector created by freepik - www.freepik.com</a>  
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![UI Image](/ui.jpg)
+# Screenshot 
+![Screenshot](/screenshot.png)
